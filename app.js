@@ -30,6 +30,17 @@ app.get("/speak/:animal", function(req, res){
 
 });
 
+app.get("/repeat/:word/:much", function(req, res){
+    var much = Number(req.params.much);
+    var word = req.params.word;
+    var str = "";
+    for(var i = 0; i < much; i++)
+    {
+         str += word + " ";
+    }
+    res.send(str);
+});
+
 
 app.get("*", function(req, res){
     console.log("Let's go!");
