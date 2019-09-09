@@ -14,7 +14,7 @@ app.get("/speak/:animal", function(req, res){
         cow: "Moo!",
         cat: "MEOW!"
     }
-    var animal = req.params.animal;
+    var animal = req.params.animal.toLowerCase();
     var sound = sounds[animal];
     res.send(sound);
 
